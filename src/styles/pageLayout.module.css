@@ -1,0 +1,22 @@
+.main {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: white;
+  height: 100%;
+  width: 100%;
+}
+
+.slideElement {
+  position: absolute;  /* Position it off-screen initially */
+  transition: transform 0.5s ease-out;
+}
+
+.slideIn {
+  transform: translateX(0);
+}
+
+.slideOut {
+  transform: translateX(-100%);  /* Move it off-screen to the left */
+}

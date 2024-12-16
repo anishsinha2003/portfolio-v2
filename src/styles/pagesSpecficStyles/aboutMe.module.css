@@ -1,0 +1,409 @@
+.middleContentContainer {
+    width: 1000px;
+    height: 600px;
+    display: grid;
+    overflow: hidden;
+
+    grid-template-columns: [start] 40% [second] 60% [end];
+    grid-template-rows: [start] 8% [second] 17% [third] 10% [fourth] 20% [fifth] 30% [end];
+}
+
+
+.profilePic {
+    grid-column-start: start;
+    grid-column-end: second;
+    grid-row-start: start;
+    grid-row-end: end;
+    /* background-color: cyan; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height:100%;
+    padding-right: 20px;
+    z-index: 0;
+}
+
+
+.hiThere {
+    grid-column-start: second;
+    grid-column-end: end;
+    grid-row-start: start;
+    grid-row-end: second;
+    /* background-color: blue; */
+    color: white;
+    display: flex;
+    justify-content: flex-start;
+    font-family: "montserrat";
+    opacity: 0.2;
+    font-size: 20px;
+    padding-top: 20px;
+
+    width: 100%;
+    height:100%;
+}
+.name {
+    grid-column-start: second;
+    grid-column-end: end;
+    grid-row-start: second;
+    grid-row-end: third;
+    /* background-color: green; */
+    color: white;
+    display: flex;
+    justify-content: flex-start;
+    font-family: "montserrat";
+    opacity: 0.5;
+    font-weight: bold;
+    font-size: 50px;
+    letter-spacing: 1px;
+    width: 100%;
+    letter-spacing: 2px;
+    height:100%;
+}
+.job {
+    grid-column-start: second;
+    grid-column-end: end;
+    grid-row-start: third;
+    grid-row-end: fourth;
+    /* background-color: red; */
+    justify-content: flex-start;
+    position: relative;
+    top: -30px;
+    font-family: "montserrat";
+    color: #FF4D4D;
+    text-align: left;
+    font-size: 28px;
+    opacity: 0.4;
+    font-weight: bold;
+    width: 100%;
+    height:100%;
+}
+.desc {
+    grid-column-start: second;
+    grid-column-end: end;
+    grid-row-start: fourth;
+    grid-row-end: fifth;
+    position: relative;
+    top: -30px;
+    /* background-color: purple; */
+    text-align: left;
+    justify-content: flex-start;
+    font-family: "montserrat";
+    opacity: 0.3;
+    width: 100%;
+    height:100%;
+    padding-right: 70px;
+}
+
+.buttons {
+    grid-column-start: second;
+    grid-column-end: end;
+    grid-row-start: fifth;
+    grid-row-end: end;
+    /* background-color: white; */
+    display: flex;
+    justify-content: row;
+    align-items: flex-start;
+    padding-top: 20px;
+
+    width: 100%;
+    height:100%;
+}
+
+.cvButton {
+    width: 160px;
+    height: 50px;
+    background-color: #b93c3c;
+    font-family: "montserrat";
+    display: flex;
+    justify-content: center;
+    color: rgb(196, 196, 196);
+    text-align: center;
+    letter-spacing: 0.5px;
+    align-items: center;
+    cursor: pointer;
+    transition: 0.5s;
+}
+
+.cvButton:hover {
+    background-color: #ff8282;
+    color: white;
+}
+
+.cvButtonLightMode {
+    width: 160px;
+    height: 50px;
+    background-color: #ff8989;
+    font-family: "montserrat";
+    display: flex;
+    justify-content: center;
+    color: rgb(255, 255, 255);
+    text-align: center;
+    letter-spacing: 0.5px;
+    align-items: center;
+    cursor: pointer;
+    transition: 0.5s;
+}
+
+.cvButtonLightMode:hover {
+    background-color: #ff4e4e;
+    color: white;
+}
+
+.atButton {
+    width: 220px;
+    height: 50px;
+    background-color: transparent;
+    border: 1px solid rgb(81, 81, 81);
+    color: rgb(132, 132, 132);
+    font-family: "montserrat";
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    letter-spacing: 0.5px;
+    align-items: center;
+    cursor: pointer;
+    transition: 0.5s;
+}
+
+.atButton:hover {
+    background-color: #e3e3e3;
+    color: rgb(37, 36, 36);
+}
+
+.atButtonLightMode {
+    width: 220px;
+    height: 50px;
+    background-color: transparent;
+    border: 1px solid rgb(81, 81, 81);
+    color: rgb(132, 132, 132);
+    font-family: "montserrat";
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    letter-spacing: 0.5px;
+    align-items: center;
+    cursor: pointer;
+    transition: 0.5s;
+}
+
+.atButtonLightMode:hover {
+    background-color: #3b3b3b;
+    color: rgb(208, 208, 208);
+}
+
+
+/* mobile version grid */
+
+.middleContentContainerMobile {
+    width: 400px;
+    height: 900px;
+    display: grid;
+    overflow: hidden;
+
+    grid-template-columns: [start] 1fr [end];
+    grid-template-rows: [start] 5% [second] 14% [third] 40% [fourth] 11% [fifth] 20% [sixth] 10% [end];
+}
+
+
+
+.hiThereMobile {
+    grid-column-start: start;
+    grid-column-end: end;
+    grid-row-start: start;
+    grid-row-end: second;
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    /* background-color: blue; */
+    color: white;
+    display: flex;
+    font-family: "montserrat";
+    opacity: 0.2;
+    font-size: 20px;
+    padding-top: 20px;
+
+    width: 100%;
+    height:100%;
+}
+.nameMobile {
+    grid-column-start: start;
+    grid-column-end: end;
+    grid-row-start: second;
+    grid-row-end: third;
+    /* background-color: green; */
+    color: white;
+    font-family: "montserrat";
+    opacity: 0.5;
+    font-weight: bold;
+    font-size: 50px;
+    letter-spacing: 1px;
+    width: 100%;
+    letter-spacing: 2px;
+    height:100%;
+    display: flex;
+    text-align: center;
+    justify-content: center;
+}
+
+.profilePicMobile {
+    grid-column-start: start;
+    grid-column-end: end;
+    grid-row-start: third;
+    grid-row-end: fourth;
+    /* background-color: cyan; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height:100%;
+    padding-right: 20px;
+    z-index: 0;
+}
+
+.jobMobile {
+    grid-column-start: start;
+    grid-column-end: end;
+    grid-row-start: fourth;
+    grid-row-end: fifth;
+    /* background-color: red; */
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    position: relative;
+    /* top: -30px; */
+    font-family: "montserrat";
+    color: #FF4D4D;
+    text-align: left;
+    font-size: 28px;
+    opacity: 0.4;
+    font-weight: bold;
+    width: 100%;
+    height:100%;
+}
+.descMobile {
+    grid-column-start: start;
+    grid-column-end: end;
+    grid-row-start: fifth;
+    grid-row-end: sixth;
+    position: relative;
+    top: -50px;
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    font-size: 12px;
+    font-family: "montserrat";
+    float: right;
+    opacity: 0.3;
+    width: 100%;
+    padding-left: 60px;
+    padding-right: 60px;
+    height:100%;
+}
+
+.buttonsMobile {
+    grid-column-start: start;
+    grid-column-end: end;
+    grid-row-start: sixth;
+    grid-row-end: end;
+    /* background-color: white; */
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+    flex-direction: column;
+    position: relative;
+    top: -40px;
+
+    width: 100%;
+    height:100%;
+}
+
+.cvButtonMobile {
+    width: 180px;
+    height: 40px;
+    background-color: #b93c3c;
+    font-family: "montserrat";
+    display: flex;
+    justify-content: center;
+    color: rgb(196, 196, 196);
+    text-align: center;
+    letter-spacing: 0.5px;
+    align-items: center;
+    cursor: pointer;
+    transition: 0.5s;
+    font-size: 12px;
+}
+
+.cvButtonMobile:hover {
+    background-color: #ff6c6c;
+    color: white;
+}
+
+
+.cvButtonMobileLightMode {
+    width: 180px;
+    height: 40px;
+    background-color: #ff8989;
+    font-family: "montserrat";
+    display: flex;
+    justify-content: center;
+    color: rgb(255, 255, 255);
+    text-align: center;
+    letter-spacing: 0.5px;
+    align-items: center;
+    cursor: pointer;
+    transition: 0.5s;
+    font-size: 12px;
+}
+
+.cvButtonMobileLightMode:hover {
+    background-color: #ff6c6c;
+    color: white;
+}
+
+.atButtonMobile {
+    width: 160px;
+    height: 40px;
+    background-color: transparent;
+    border: 1px solid rgb(81, 81, 81);
+    color: rgb(132, 132, 132);
+    font-family: "montserrat";
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    letter-spacing: 0.5px;
+    align-items: center;
+    cursor: pointer;
+    transition: 0.5s;
+    font-size: 12px;
+}
+
+.atButtonMobile:hover {
+    background-color: #e3e3e3;
+    color: rgb(37, 36, 36);
+}
+
+.atButtonMobileLightMode {
+    width: 160px;
+    height: 40px;
+    background-color: transparent;
+    border: 1px solid rgb(81, 81, 81);
+    color: rgb(132, 132, 132);
+    font-family: "montserrat";
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    letter-spacing: 0.5px;
+    align-items: center;
+    cursor: pointer;
+    transition: 0.5s;
+    font-size: 12px;
+}
+
+.atButtonMobileLightMode:hover {
+    background-color: #3b3b3b;
+    color: rgb(208, 208, 208);
+}
+

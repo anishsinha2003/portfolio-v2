@@ -1,0 +1,49 @@
+/* Navbar.module.css */
+.navbarContainer {
+    display: flex;
+    justify-content: space-between; /* Distribute content between left and right */
+    align-items: center;
+    padding: 30px 100px;
+    background-color: transparent;
+    color: white;
+    height: 100px;
+    z-index: 10;
+}
+
+.navLeft {
+    display: flex;
+    gap: 20px; /* Space between tabs */
+}
+
+.navItem {
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+    font-family: "montserrat";
+    padding: 10px;
+    transition: color 0.3s ease-in-out;
+}
+
+.navItem:hover {
+    color: #f4a261; /* Color on hover */
+}
+
+.navRight {
+    display: flex;
+    align-items: center;
+    font-family: "montserrat";
+    font-size: 30px;
+    color: #732b2b;
+    letter-spacing: 1px;
+    font-weight: bold;
+}
+
+.logo {
+    display: block;
+}
+
+.logoImage {
+    height: 40px; /* Adjust the size of the logo */
+    width: auto;
+}
+

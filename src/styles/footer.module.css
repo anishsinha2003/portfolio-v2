@@ -1,0 +1,38 @@
+.footerContainer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 30px 100px;
+    color: white;
+    /* border-top: 2px solid #f4a261; */
+    /* position: absolute; */
+    height: 100px;
+    bottom: 0;
+    width: 100%;
+  }
+
+  .footerLeft {
+    display: flex;
+    gap: 30px;
+  }
+
+  .footerLink {
+    color: white;
+    text-decoration: none;
+    font-family: "Montserrat", sans-serif;
+    font-size: 16px;
+    letter-spacing: 1px;
+    font-weight: bold;
+    transition: color 0.3s ease;
+  }
+
+  .footerRight {
+    display: flex;
+    align-items: center;
+    justify-content: spa;
+    font-family: "Montserrat", sans-serif;
+    font-size: 20px;
+    letter-spacing: 2px;
+    gap: 20px;
+    font-weight: bold;
+  }
