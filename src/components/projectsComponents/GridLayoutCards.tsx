@@ -134,7 +134,7 @@ const GridLayoutCards = () => {
             >
                 {windowWidth < 715
                 ?
-                    <div style={{display: "flex", flexDirection: "column", overflow: "scroll", alignItems: "center", justifyContent: "flex-start", height: "700px", width: "clamp(300px, 60vw, 800px)", gap: "50px"}}>
+                    <div style={{display: "flex", flexDirection: "column", overflow: "scroll", alignItems: "center", justifyContent: "flex-start", height: "700px", width: "clamp(320px, 60vw, 820px)", gap: "50px"}}>
                         {data.map((item: any, index: any) => (
                         <div
                             key={index}
@@ -158,8 +158,8 @@ const GridLayoutCards = () => {
                                 zIndex: 10000,
                             }}
                         />
-                        <div className={styles.flipCardInner} style={{width: "clamp(300px, 60vw, 800px)", height: "400px"}}>
-                            <div className={styles.flipCardFront} style={{backgroundColor: isDarkMode ? "" : "#eaeaea"}}>
+                        <div className={styles.flipCardInner} style={{width: "clamp(300px, 50vw, 800px)", height: "400px"}}>
+                            <div className={styles.flipCardFront} style={{backgroundColor: isDarkMode ? "" : "#eaeaea", boxShadow: isDarkMode ? "" : "rgba(0, 0, 0, 0.07) 0px 1px 1px, rgba(0, 0, 0, 0.07) 0px 2px 2px, rgba(0, 0, 0, 0.07) 0px 4px 4px, rgba(0, 0, 0, 0.07) 0px 8px 8px, rgba(0, 0, 0, 0.07) 0px 16px 16px"}}>
                                 <div className={styles.cardTitle} style={{color: isDarkMode ? "" : "black", opacity: isDarkMode ? "" : 0.6}}>
                                     {item.title}
                                 </div>
@@ -178,7 +178,7 @@ const GridLayoutCards = () => {
                                     </button>
                                 </div>
                             </div>
-                            <div className={styles.flipCardBack} style={{backgroundColor: isDarkMode ? "" : "#eaeaea"}}>
+                            <div className={styles.flipCardBack} style={{backgroundColor: isDarkMode ? "" : "#eaeaea", boxShadow: isDarkMode ? "" : "rgba(0, 0, 0, 0.07) 0px 1px 1px, rgba(0, 0, 0, 0.07) 0px 2px 2px, rgba(0, 0, 0, 0.07) 0px 4px 4px, rgba(0, 0, 0, 0.07) 0px 8px 8px, rgba(0, 0, 0, 0.07) 0px 16px 16px"}}>
                                 <div className={styles.cardSkillsTitle} style={{opacity: isDarkMode ? "" : "0.2"}}>
                                     SKILLS
                                 </div>
@@ -240,7 +240,7 @@ const GridLayoutCards = () => {
                                     }}
                                 />
                                 <div className={styles.flipCardInner}>
-                                    <div className={styles.flipCardFront} style={{backgroundColor: isDarkMode ? "" : "#eaeaea"}}>
+                                    <div className={styles.flipCardFront} style={{backgroundColor: isDarkMode ? "" : "#eaeaea", boxShadow: isDarkMode ? "" : "rgba(0, 0, 0, 0.07) 0px 1px 1px, rgba(0, 0, 0, 0.07) 0px 2px 2px, rgba(0, 0, 0, 0.07) 0px 4px 4px, rgba(0, 0, 0, 0.07) 0px 8px 8px, rgba(0, 0, 0, 0.07) 0px 16px 16px"}}>
                                         <div className={styles.cardTitle} style={{color: isDarkMode ? "" : "black", opacity: isDarkMode ? "" : 0.6}}>
                                             {item.title}
                                         </div>
@@ -253,7 +253,7 @@ const GridLayoutCards = () => {
                                         <div className={styles.cardFooter}>
                                             <div className={styles.iconList}>
                                                 {item.icons.map((iconSrc: string, index: number) => (
-                                                    <Image key={index} src={iconSrc} alt={"d"} width={40} height={40} style={{opacity: isDarkMode ? 1 : 0.8, filter: isDarkMode ? "brightness(60%)" : "brightness(100%)"}} layout="intrinsic" objectFit="contain"/>
+                                                    <Image priority key={index} src={iconSrc} alt={"d"} width={40} height={40} style={{opacity: isDarkMode ? 1 : 0.8, filter: isDarkMode ? "brightness(60%)" : "brightness(100%)"}} layout="intrinsic" objectFit="contain"/>
                                                 ))}
                                             </div>
                                             <button
@@ -264,7 +264,7 @@ const GridLayoutCards = () => {
                                             </button>
                                         </div>
                                     </div>
-                                    <div className={styles.flipCardBack} style={{backgroundColor: isDarkMode ? "" : "#eaeaea"}}>
+                                    <div className={styles.flipCardBack} style={{backgroundColor: isDarkMode ? "" : "#eaeaea", boxShadow: isDarkMode ? "" : "rgba(0, 0, 0, 0.07) 0px 1px 1px, rgba(0, 0, 0, 0.07) 0px 2px 2px, rgba(0, 0, 0, 0.07) 0px 4px 4px, rgba(0, 0, 0, 0.07) 0px 8px 8px, rgba(0, 0, 0, 0.07) 0px 16px 16px"}}>
                                         <div className={styles.cardSkillsTitle} style={{opacity: isDarkMode ? "" : "0.2"}}>
                                             SKILLS
                                         </div>

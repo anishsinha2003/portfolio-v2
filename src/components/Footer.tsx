@@ -4,7 +4,7 @@ import Image from "next/image";
 import styles from "@/styles/footer.module.css";
 import { styled } from '@mui/material/styles';
 import Switch, { SwitchProps } from '@mui/material/Switch';
-import { FormControlLabel } from "@mui/material";
+import { FormControlLabel, Snackbar } from "@mui/material";
 import GitHubIcon from '@mui/icons-material/GitHub';
 import LinkedInIcon from '@mui/icons-material/LinkedIn';
 import EmailIcon from '@mui/icons-material/Email';
@@ -12,8 +12,19 @@ import { useWindowWidth } from "./WindowWidthContext";
 import { useDarkMode } from "./DarkModeContext";
 
 const Footer = () => {
+  const [emailCopiedSnackBarOpen, setEmailCopiedSnackBarOpen] = useState(false);
   const windowWidth = useWindowWidth();
   const { isDarkMode, toggleDarkMode } = useDarkMode();
+
+  const handleEmailCopy = () => {
+    const emailToCopy = "anishsinha2003@gmail.com";
+    navigator.clipboard.writeText(emailToCopy)
+      .then(() => {
+        setEmailCopiedSnackBarOpen(true);
+      })
+      .catch((err) => console.error("Failed to copy text: ", err));
+  };
+
   const MaterialUISwitch = styled(Switch)(({ theme }) => ({
     width: 80,
     height: 48,
@@ -88,9 +99,26 @@ const Footer = () => {
       </div>
 
       <div className={styles.footerRight} style={{color: isDarkMode ? "#6d6d6d" : "#848484"}}>
-        <LinkedInIcon  sx={{"&:hover": { transition: "0.5s", cursor: "pointer", color: isDarkMode ? "white": "black", opacity: 0.8}}}/>
-        <GitHubIcon sx={{"&:hover": { transition: "0.5s", cursor: "pointer", color: isDarkMode ? "white": "black", opacity: 0.8}}}/>
-        <EmailIcon sx={{"&:hover": { transition: "0.5s", cursor: "pointer", color: isDarkMode ? "white": "black", opacity: 0.8}}}/>
+        <LinkedInIcon onClick={() => window.open("https://www.linkedin.com/in/anish-sinha-9a369b222/", "_blank")} sx={{"&:hover": { transition: "0.5s", cursor: "pointer", color: isDarkMode ? "white": "black", opacity: 0.8}}}/>
+        <GitHubIcon onClick={() => window.open("https://github.com/anishsinha2003", "_blank")} sx={{"&:hover": { transition: "0.5s", cursor: "pointer", color: isDarkMode ? "white": "black", opacity: 0.8}}}/>
+        <EmailIcon onClick={handleEmailCopy} sx={{"&:hover": { transition: "0.5s", cursor: "pointer", color: isDarkMode ? "white": "black", opacity: 0.8}}}/>
+        <Snackbar
+          anchorOrigin={{ vertical: 'top', horizontal: 'center' }}
+          open={emailCopiedSnackBarOpen}
+          onClose={() => setEmailCopiedSnackBarOpen(false)}
+          message="Email Copied to Clipboard"
+          autoHideDuration={3000}
+          sx={{
+            "& .MuiSnackbarContent-root": {
+              backgroundColor: isDarkMode ? "#eaeaea" : "#282828",
+              color: isDarkMode ? "black" : "#e8e8e8",
+              fontSize: "1rem",
+              letterSpacing: 0.6,
+              fontFamily: "montserrat",
+            },
+          }}
+          key={"emailSnackBar"}
+        />
       </div>
     </div>
   );

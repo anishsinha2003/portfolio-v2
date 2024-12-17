@@ -75,123 +75,131 @@ export default function Projects() {
     }
   }, [page])
 
+  if (windowWidth === 0) {
+    return <></>
+  }
+
   return (
-    <div className={layoutStyle.main} style={{backgroundColor: "none", position: "relative"}}>
+    <div className={layoutStyle.main} style={{backgroundColor: "transparent", position: "relative"}}>
       <motion.div
         initial={{ x: animation.initial, opacity: 0 }}  // Set initial opacity to 0
         animate={{ x: isVisible ? 0 : animation.animate, opacity: isVisible ? 1 : 0 }}
         exit={{ x: isVisible ? animation.animate : animation.animate, opacity: isVisible ? 0 : 1 }}
         transition={{ type: "spring", duration: 0.7 }}
       >
-        {windowWidth >= 1700
-        ?
-        <>
-          <div>
-            <ToggleButtonGroup
-              value={selectedLayout}
-              exclusive
-              onChange={handleSelectLayout}
-              sx={{
-                position: "absolute",
-                top: "0",
-                display: showToggle ? "block" : "none",
-                left: "50%",
-                opacity:  0.8,
-              }}
-            >
-              <ToggleButton
-                value="carousel"
-                aria-label="carousel view"
-                sx={{
-                  backgroundColor: isDarkMode
-                    ? selectedLayout === "carousel"
-                      ? "red"
-                      : "grey"
-                    : selectedLayout === "carousel"
-                      ? "pink"
-                      : "#EAEAEA",
-                  color: selectedLayout === "carousel" ? "#fff" : "#000",
-                  transition: "0.3s",
-                  '&:hover': {
-                    backgroundColor: isDarkMode ? "#aaaaaa" : "#afafaf",
-                  },
-                  '&.Mui-selected': {
-                    backgroundColor: isDarkMode ? "#722b2a" : "#EDB7B7",
-                    color: "#fff",
-                  },
-                  '&.Mui-selected:hover': {
-                    backgroundColor: "#722b2a",
-                  },
-                  '& svg': {
-                    color: isDarkMode
-                    ? selectedLayout === "carousel"
-                      ? "#aaaaaa"
-                      : "#383838"
-                    : selectedLayout === "carousel"
-                      ? "white"
-                      : "grey",
-                  },
-                }}
-              >
-                <ViewCarouselIcon />
-              </ToggleButton>
-              <ToggleButton
-                value="grid"
-                aria-label="grid view"
-                sx={{
-                  backgroundColor: isDarkMode
-                    ? selectedLayout === "grid"
-                      ? "red"
-                      : "grey"
-                    : selectedLayout === "grid"
-                      ? "pink"
-                      : "#EAEAEA",
-                  color: selectedLayout === "grid" ? "#fff" : "#000",
-                  transition: "0.3s",
-                  '&:hover': {
-                    backgroundColor: isDarkMode ? "#aaaaaa" : "#afafaf",
-                  },
-                  '&.Mui-selected': {
-                    backgroundColor: isDarkMode ? "#722b2a" : "#EDB7B7",
-                    color: "#fff",
-                  },
-                  '&.Mui-selected:hover': {
-                    backgroundColor: isDarkMode ? "#722b2a" : "#EDB7B7"
-                  },
-                  '& svg': {
-                    color: isDarkMode
-                    ? selectedLayout === "grid"
-                      ? "#aaaaaa"
-                      : "#383838"
-                    : selectedLayout === "grid"
-                      ? "white"
-                      : "grey",
-                  },
-                }}
 
-              >
-                <ViewModuleIcon/>
-              </ToggleButton>
-            </ToggleButtonGroup>
+        <div style={{backgroundColor: "transparent"}}>
+          <div style={{ position: "relative", top: selectedLayout === "grid" ? "4px" : "0px" }}>
+            {windowWidth >= 1700
+              ?
+              <>
+                <div>
+                  <ToggleButtonGroup
+                    value={selectedLayout}
+                    exclusive
+                    onChange={handleSelectLayout}
+                    sx={{
+                      // position: "absolute",
+                      // top: "0",
+                      // display: showToggle ? "block" : "none",
+                      // left: "50%",
+                      opacity:  0.8,
+                    }}
+                  >
+                    <ToggleButton
+                      value="carousel"
+                      aria-label="carousel view"
+                      sx={{
+                        backgroundColor: isDarkMode
+                          ? selectedLayout === "carousel"
+                            ? "red"
+                            : "grey"
+                          : selectedLayout === "carousel"
+                            ? "pink"
+                            : "#EAEAEA",
+                        color: selectedLayout === "carousel" ? "#fff" : "#000",
+                        transition: "0.3s",
+                        '&:hover': {
+                          backgroundColor: isDarkMode ? "#aaaaaa" : "#afafaf",
+                        },
+                        '&.Mui-selected': {
+                          backgroundColor: isDarkMode ? "#722b2a" : "#EDB7B7",
+                          color: "#fff",
+                        },
+                        '&.Mui-selected:hover': {
+                          backgroundColor: "#722b2a",
+                        },
+                        '& svg': {
+                          color: isDarkMode
+                          ? selectedLayout === "carousel"
+                            ? "#aaaaaa"
+                            : "#383838"
+                          : selectedLayout === "carousel"
+                            ? "white"
+                            : "grey",
+                        },
+                      }}
+                    >
+                      <ViewCarouselIcon />
+                    </ToggleButton>
+                    <ToggleButton
+                      value="grid"
+                      aria-label="grid view"
+                      sx={{
+                        backgroundColor: isDarkMode
+                          ? selectedLayout === "grid"
+                            ? "red"
+                            : "grey"
+                          : selectedLayout === "grid"
+                            ? "pink"
+                            : "#EAEAEA",
+                        color: selectedLayout === "grid" ? "#fff" : "#000",
+                        transition: "0.3s",
+                        '&:hover': {
+                          backgroundColor: isDarkMode ? "#aaaaaa" : "#afafaf",
+                        },
+                        '&.Mui-selected': {
+                          backgroundColor: isDarkMode ? "#722b2a" : "#EDB7B7",
+                          color: "#fff",
+                        },
+                        '&.Mui-selected:hover': {
+                          backgroundColor: isDarkMode ? "#722b2a" : "#EDB7B7"
+                        },
+                        '& svg': {
+                          color: isDarkMode
+                          ? selectedLayout === "grid"
+                            ? "#aaaaaa"
+                            : "#383838"
+                          : selectedLayout === "grid"
+                            ? "white"
+                            : "grey",
+                        },
+                      }}
+
+                    >
+                      <ViewModuleIcon/>
+                    </ToggleButton>
+                  </ToggleButtonGroup>
+                </div>
+                  <br/><br/>
+              </>
+              : <></>
+            }
           </div>
-            <br/><br/><br/><br/>
-        </>
-        : <></>
-
-        }
-        <motion.div
-          key={selectedLayout}
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          exit={{ opacity: 0 }}
-          transition={{ duration: 1 }}
-        >
-          {selectedLayout === "carousel" ? (
-            <Carousel data={data} activeSlide={0} />
-          ) : (
-            <GridLayoutCards />
-          )}
-        </motion.div>
+          <motion.div
+            key={selectedLayout}
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 1 }}
+          >
+            {selectedLayout === "carousel" ? (
+              <Carousel data={data} activeSlide={0} />
+            ) : (
+              <GridLayoutCards />
+            )}
+          </motion.div>
+        </div>
 
       </motion.div>
     </div>

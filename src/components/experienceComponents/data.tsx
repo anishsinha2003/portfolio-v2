@@ -26,7 +26,7 @@ const data: Item[] = [
     title: "",
     logo: "/riotinto.png",
     overview: "This internship focuses on migrating a legacy Manufacturing Execution System (MES), tracking aluminum production, from an Oracle-based system to a modern solution. The project involves developing a .NET (C#) API, a React/Next.js UI, and integrating with an Oracle Database for seamless data migration and system functionality.",
-    learnigs: ["API", "ReactJs", "NextJS", "Typescript", ".NET", "Clean Architecture", "C#", "Oracle Forms/Database", "SQL", "Agile Framew,ork", "Octopus Deploy", "CI/CD", "Azure Devops"]
+    learnigs: ["API", "ReactJs", "NextJS", "Typescript", ".NET", "Clean Architecture", "C#", "Oracle Forms/Database", "SQL", "Agile Framework", "Octopus Deploy", "CI/CD", "Azure Devops"]
   },
   {
     id: 2,

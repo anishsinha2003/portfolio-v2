@@ -45,7 +45,8 @@ export default function VerticalLine() {
             padding: "10px",
             borderRadius: "8px",
             textAlign: "center",
-            boxShadow: "0px 4px 6px rgba(0, 0, 0, 0.1)",
+            boxShadow: isDarkMode ? "0px 4px 6px rgba(0, 0, 0, 0.1)" : "rgba(0, 0, 0, 0.07) 0px 1px 1px, rgba(0, 0, 0, 0.07) 0px 2px 2px, rgba(0, 0, 0, 0.07) 0px 4px 4px, rgba(0, 0, 0, 0.07) 0px 8px 8px, rgba(0, 0, 0, 0.07) 0px 16px 16px"
+,
           }}
         >
           <div
@@ -144,7 +145,7 @@ export default function VerticalLine() {
             paddingRight: "15px",
             borderRadius: "8px",
             textAlign: "center",
-            boxShadow: "0px 4px 6px rgba(0, 0, 0, 0.1)",
+            boxShadow: isDarkMode ? "0px 4px 6px rgba(0, 0, 0, 0.1)" : "rgba(0, 0, 0, 0.07) 0px 1px 1px, rgba(0, 0, 0, 0.07) 0px 2px 2px, rgba(0, 0, 0, 0.07) 0px 4px 4px, rgba(0, 0, 0, 0.07) 0px 8px 8px, rgba(0, 0, 0, 0.07) 0px 16px 16px"
           }}
         >
           <div
@@ -291,7 +292,7 @@ export default function VerticalLine() {
             borderRadius: "8px",
             textAlign: "center",
             paddingRight: "15px",
-            boxShadow: "0px 4px 6px rgba(0, 0, 0, 0.1)",
+            boxShadow: isDarkMode ? "0px 4px 6px rgba(0, 0, 0, 0.1)" : "rgba(0, 0, 0, 0.07) 0px 1px 1px, rgba(0, 0, 0, 0.07) 0px 2px 2px, rgba(0, 0, 0, 0.07) 0px 4px 4px, rgba(0, 0, 0, 0.07) 0px 8px 8px, rgba(0, 0, 0, 0.07) 0px 16px 16px"
           }}
         >
           <div

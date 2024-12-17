@@ -123,7 +123,7 @@ export default [
       {
         link: "./research.pdf",
         browserLink: "https://drive.google.com/file/d/1mdzmLcUcHCejE1eYNegl4wDid31u9G6I/view?usp=sharing",
-        label: "RESEARCH REPORT",
+        label: "RESEARCH",
         type: "embedded"
       },
       {

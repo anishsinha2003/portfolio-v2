@@ -44,6 +44,9 @@ export default function AboutMe() {
     window.open("https://drive.google.com/file/d/1kr1cyEGkmlt0kGRMb4V6xP9H8df88mEF/view?usp=sharing", "_blank");
   };
 
+  if (windowWidth === 0) {
+    return <></>
+  }
   return (
     <div className={layoutStyle.main}>
       <div className={layoutStyle.main}>
@@ -67,6 +70,7 @@ export default function AboutMe() {
             <div className={style.profilePicMobile}>
               <Image src={"/profileImage.png"} alt={"profile-pic"} width={300} height={300}
                 style={{position: "relative", top: "-58px", opacity: isDarkMode ? 0.9 : 0.9}}
+                priority
               />
             </div>
             <div className={style.jobMobile}>
@@ -90,7 +94,7 @@ export default function AboutMe() {
             className={style.middleContentContainer}
           >
             <div className={style.profilePic}>
-              <Image src={"/profileImage.png"} alt={"profile-pic"} width={900} height={900} style={{position: "relative", top: "-58px", opacity: isDarkMode ? 0.9 : 0.9}}/>
+              <Image priority src={"/profileImage.png"} alt={"profile-pic"} width={900} height={900} style={{position: "relative", top: "-58px", opacity: isDarkMode ? 0.9 : 0.9}}/>
             </div>
             <div className={style.hiThere} style={{color: isDarkMode ? "" : "black", opacity: isDarkMode ? "" : 0.3 }}>
               Hi there! I'm

@@ -1,63 +1,3 @@
-// "use client"
-// import Image from "next/image";
-// import layoutStyle from "@/styles/pageLayout.module.css"
-// import { useEffect, useState } from "react";
-// import { useStringContext } from "@/components/StringContext";
-// import { useCurrentPageContext } from "@/components/CurrentPageContext";
-// import { useRouter } from "next/navigation";
-// import { motion } from "framer-motion";
-
-// export default function Links() {
-//   const {prevPage, setPrevPage} = useStringContext();
-//   const {page, setPage} = useCurrentPageContext();
-//   const router = useRouter();
-
-//   const [isVisible, setIsVisible] = useState(true);
-//   const [animation, setAnimation] = useState({
-//     initial : prevPage === "/aboutMe" ||  prevPage === "/education" || prevPage === "/projects" ? "400%" : "-400%",
-//     animate : "400%",
-//   })
-
-//   useEffect(() => {
-//     if (page !== "/links") {
-//       if (page === "/aboutMe" ||  page === "/education" || page === "/projects") {
-//         setAnimation({
-//           initial : "400%",
-//           animate : "400%",
-//         })
-//       }
-//       else {
-//         setAnimation({
-//           initial : "400%",
-//           animate : "-400%",
-//         })
-
-//       }
-//       setIsVisible(false);
-//     }
-//   }, [page])
-
-//   return (
-//     <div className={layoutStyle.main}>
-//       <div className={layoutStyle.main}>
-//        <motion.div
-//         initial={{ x: animation.initial, opacity: 0 }}  // Set initial opacity to 0
-//         animate={{ x: isVisible ? 0 : animation.animate, opacity: isVisible ? 1 : 0 }}
-//         exit={{ x: isVisible ? animation.animate : animation.animate, opacity: isVisible ? 0 : 1 }}
-//         transition={{ type: "spring", duration: 0.4 }}
-//       >
-//         <div
-//           style={{width: "200px", height: "200px", backgroundColor: "purple"}}
-//         >
-//           aboutme
-//         </div>
-//       </motion.div>
-//     </div>
-//     </div>
-//   );
-// }
-// //
-
 "use client"
 import React, { useEffect, useState } from "react";
 import layoutStyle from "@/styles/pageLayout.module.css"
@@ -151,9 +91,12 @@ export default function Experience() {
         }
     };
 
+  if (windowWidth === 0) {
+    return <></>
+  }
 
   return (
-    <div className={styles.main} style={{position: "relative"}}>
+    <div className={styles.main}>
       <motion.div
         initial={{ x: animation.initial, opacity: 0 }}  // Set initial opacity to 0
         animate={{ x: isVisible ? 0 : animation.animate, opacity: isVisible ? 1 : 0 }}
@@ -171,7 +114,7 @@ export default function Experience() {
                 alignItems: "center",
                 justifyContent: "flex-start",
                 height: "700px",
-                width: "clamp(300px, 60vw, 800px)",
+                width: "clamp(320px, 60vw, 820px)",
                 gap: "50px"
               }
             :
@@ -180,6 +123,7 @@ export default function Experience() {
                 justifyContent: "center",
                 alignItems: "center",
                 textAlign: "center",
+                height: "100%"
               }
           }
         >
@@ -209,10 +153,10 @@ export default function Experience() {
                         zIndex: 10000,
                     }}
                 />
-                <div className={styles.flipCardInner} style={{width: "clamp(300px, 60vw, 800px)", minHeight: "clamp(600px, 50vw, 700px)"}}>
-                    <div className={styles.flipCardFront} style={{backgroundColor: isDarkMode ? "" : "#eaeaea"}}>
+                <div className={styles.flipCardInner} style={{width: "clamp(300px, 50vw, 800px)", minHeight: "clamp(600px, 50vw, 700px)"}}>
+                    <div className={styles.flipCardFront} style={{backgroundColor: isDarkMode ? "" : "#eaeaea", boxShadow: isDarkMode ? "" : "rgba(0, 0, 0, 0.07) 0px 1px 1px, rgba(0, 0, 0, 0.07) 0px 2px 2px, rgba(0, 0, 0, 0.07) 0px 4px 4px, rgba(0, 0, 0, 0.07) 0px 8px 8px, rgba(0, 0, 0, 0.07) 0px 16px 16px"}}>
                         <div className={styles.cardLogo}>
-                          <Image src={item.logo} alt="logo" width={200} height={200} style={{opacity: isDarkMode ? 0.6 : 0.8}}/>
+                          <Image priority src={item.logo} alt="logo" width={200} height={200} style={{opacity: isDarkMode ? 0.6 : 0.8, filter: "brightness(0.6)"}}/>
                         </div>
                         <div className={styles.cardTags} style={{color: isDarkMode ? "" : "black", opacity: isDarkMode ? "" : 0.2}}>
                           {windowWidth < 900
@@ -220,7 +164,7 @@ export default function Experience() {
                           <div key={index}>
                             {Object.entries(item.tags).map(([key, value]) => (
 
-                              <>
+                              <div key={key}>
                                 {key === "role"
                                 ?
                                   <div key={key}>
@@ -230,7 +174,7 @@ export default function Experience() {
                                   </div>
                                 : <></>
                                 }
-                              </>
+                              </div>
                             ))}
                           </div>
                           :
@@ -257,7 +201,7 @@ export default function Experience() {
                         </div>
                     </div>
 
-                    <div className={styles.flipCardBack} style={{backgroundColor: isDarkMode ? "#232323" : "#eaeaea", height: "100%",}}>
+                    <div className={styles.flipCardBack} style={{backgroundColor: isDarkMode ? "#232323" : "#eaeaea", height: "100%", boxShadow: isDarkMode ? "" : "rgba(0, 0, 0, 0.07) 0px 1px 1px, rgba(0, 0, 0, 0.07) 0px 2px 2px, rgba(0, 0, 0, 0.07) 0px 4px 4px, rgba(0, 0, 0, 0.07) 0px 8px 8px, rgba(0, 0, 0, 0.07) 0px 16px 16px"}}>
                       <div className={styles.learningsContainer} style={{overflowY: "scroll", minHeight: "clamp(400px, 40vw, 500px)",}}>
                         {item.learnigs.map((learning: any, index: any) => {
                           const colors = ["#556398", "#424242", "#654545"];
@@ -303,7 +247,7 @@ export default function Experience() {
                   ease: "easeInOut",
                 }}
               >
-                <div className={styles.content} style={{width: "clamp(700px, 60vw, 1300px)", backgroundColor: isDarkMode ? "" : "#eaeaea"}}>
+                <div className={styles.content} style={{width: "clamp(700px, 60vw, 1300px)", backgroundColor: isDarkMode ? "" : "#eaeaea", boxShadow: isDarkMode ? "" : "rgba(0, 0, 0, 0.07) 0px 1px 1px, rgba(0, 0, 0, 0.07) 0px 2px 2px, rgba(0, 0, 0, 0.07) 0px 4px 4px, rgba(0, 0, 0, 0.07) 0px 8px 8px, rgba(0, 0, 0, 0.07) 0px 16px 16px"}}>
                   <Box
                     sx={{
                       display: 'flex',
@@ -321,7 +265,7 @@ export default function Experience() {
                       paddingLeft: '20px',
                     }}
                   />
-                  <Image src={displayedData.logo} alt="logo" width={260} height={260} style={{opacity: isDarkMode ? 0.6 : 0.8, filter: "brightness(0.6)"}}/>
+                  <Image priority src={displayedData.logo} alt="logo" width={260} height={260} style={{opacity: isDarkMode ? 0.6 : 0.8, filter: "brightness(0.6)"}}/>
                   <div className={styles.tagsContainer} style={{color: isDarkMode ? "" : "black", opacity: isDarkMode ? "" : 0.2}}>
                     {Object.entries(displayedData.tags).map(([tag, value], index, array) => (
                       <div className={styles.tag} key={tag}>

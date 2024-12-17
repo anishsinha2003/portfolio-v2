@@ -16,6 +16,7 @@
     text-align: center;
     flex-direction: column;
     color: white;
+    min-height: 820px;
     height: 100%;
     width: 1300px;
     /* padding-top: 50px; */
@@ -107,7 +108,7 @@
     padding: 10px;
     padding-right: 30px;
     text-align: center;
-    box-shadow: rgba(0, 0, 0, 0.09) 0px 2px 1px, rgba(0, 0, 0, 0.09) 0px 4px 2px, rgba(0, 0, 0, 0.09) 0px 8px 4px, rgba(0, 0, 0, 0.09) 0px 16px 8px, rgba(0, 0, 0, 0.09) 0px 32px 16px;
+    /* box-shadow: rgba(0, 0, 0, 0.09) 0px 2px 1px, rgba(0, 0, 0, 0.09) 0px 4px 2px, rgba(0, 0, 0, 0.09) 0px 8px 4px, rgba(0, 0, 0, 0.09) 0px 16px 8px, rgba(0, 0, 0, 0.09) 0px 32px 16px; */
     border-radius: 8px;
     display: grid;
     grid-template-columns: [start] 1fr [end];
@@ -244,9 +245,9 @@
     padding-right: 30px;
     padding-top: 40px;
     text-align: center;
-    box-shadow: rgba(0, 0, 0, 0.09) 0px 2px 1px, rgba(0, 0, 0, 0.09) 0px 4px 2px, rgba(0, 0, 0, 0.09) 0px 8px 4px, rgba(0, 0, 0, 0.09) 0px 16px 8px, rgba(0, 0, 0, 0.09) 0px 32px 16px;
     border-radius: 8px;
     display: grid;
+    box-shadow: rgba(0, 0, 0, 0.09) 0px 2px 1px, rgba(0, 0, 0, 0.09) 0px 4px 2px, rgba(0, 0, 0, 0.09) 0px 8px 4px, rgba(0, 0, 0, 0.09) 0px 16px 8px, rgba(0, 0, 0, 0.09) 0px 32px 16px;
     grid-template-columns: [start] 1fr [end];
     grid-template-rows: [start] 10% [second] 30% [third] 10% [fourth] 30% [fifth] 20% [end];
     height: 100%;

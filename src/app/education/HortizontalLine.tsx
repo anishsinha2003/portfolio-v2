@@ -49,7 +49,7 @@ export default function HortizontalLine() {
           width: "350px",
           height: "100px",
           textAlign: "center",
-          boxShadow: "0px 4px 6px rgba(0, 0, 0, 0.1)",
+          boxShadow: "rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px",
           paddingLeft: '20px',
           paddingBottom: '10px',
         }}
@@ -72,7 +72,7 @@ export default function HortizontalLine() {
               paddingLeft: '20px',
             }}
           />
-          <Image src={"/mfhs.png"} width={50} height={50} alt={""} style={{opacity: isDarkMode ? 0.6 : 0.8}}/>
+          <Image priority src={"/mfhs.png"} width={50} height={50} alt={""} style={{opacity: isDarkMode ? 0.6 : 0.8}}/>
           &nbsp;&nbsp;&nbsp;&nbsp;
           <div style={{fontFamily: "montserrat", fontSize: "17px", color: isDarkMode ? "white" : "black", opacity: isDarkMode ? "0.3" : "0.5", letterSpacing: "0.5px"}}>
             Model Farms High School
@@ -117,7 +117,7 @@ export default function HortizontalLine() {
           width: "390px",
           height: "100px",
           textAlign: "center",
-          boxShadow: "0px 4px 6px rgba(0, 0, 0, 0.1)",
+          boxShadow: "rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px",
           paddingLeft: '20px',
           paddingBottom: '10px',
         }}
@@ -184,7 +184,7 @@ export default function HortizontalLine() {
               SHOW MORE
             </div>
           </Tooltip>
-          <Image src={"/cths.png"} width={50} height={50} alt={""} style={{opacity: isDarkMode ? 0.6 : 0.8}}/>
+          <Image priority src={"/cths.png"} width={50} height={50} alt={""} style={{opacity: isDarkMode ? 0.6 : 0.8}}/>
           &nbsp;&nbsp;&nbsp;&nbsp;
           <div style={{fontFamily: "montserrat", fontSize: "17px", color: isDarkMode ? "white" : "black", opacity: isDarkMode ? "0.3" : "0.5", letterSpacing: "0.5px"}}>
             Cherrybrook Tech High School
@@ -248,7 +248,7 @@ export default function HortizontalLine() {
           width: "380px",
           height: "100px",
           textAlign: "center",
-          boxShadow: "0px 4px 6px rgba(0, 0, 0, 0.1)",
+          boxShadow: "rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px",
           paddingLeft: '20px',
           paddingBottom: '10px',
         }}
@@ -312,7 +312,7 @@ export default function HortizontalLine() {
             SHOW MORE
           </div>
           </Tooltip>
-          <Image src={"/unsw.png"} width={40} height={40} alt={""} style={{opacity: isDarkMode ? 0.6 : 0.8}}/>
+          <Image priority src={"/unsw.png"} width={40} height={40} alt={""} style={{opacity: isDarkMode ? 0.6 : 0.8}}/>
           &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
           <div style={{fontFamily: "montserrat", fontSize: "17px", color: isDarkMode ? "white" : "black", opacity: isDarkMode ? "0.3" : "0.5", letterSpacing: "0.5px"}}>
             University of New South Wales

@@ -14,7 +14,7 @@ import { useWindowWidth } from "@/components/WindowWidthContext";
 
 export default function Education() {
   const windowWidth = useWindowWidth();
-
+  console.log(windowWidth)
   const CustomWidthTooltip = styled(({ className, ...props }: TooltipProps) => (
     <Tooltip {...props} classes={{ popper: className }} sx={{color: "20px"}}/>
   ))({
@@ -57,6 +57,9 @@ export default function Education() {
       setRenderFromSubPage(false)
     }
   }, [page])
+  if (windowWidth === 0) {
+    return <></>
+  }
   // hieght is dependt on which one to show
   return (
     <div className={layoutStyle.main} style={{position: "relative", display: "flex", justifyContent: "center", alignItems: "center"}}>
