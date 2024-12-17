@@ -1,25 +1,22 @@
 "use client"
-import React, { useEffect, useState } from "react";
-import layoutStyle from "@/styles/pageLayout.module.css"
+import { useEffect, useState } from "react";
 import ArrowCircleRightIcon from '@mui/icons-material/ArrowCircleRight';
 import ArrowCircleLeftIcon from '@mui/icons-material/ArrowCircleLeft';
 import LocationOnIcon from '@mui/icons-material/LocationOn';
 import DateRangeIcon from '@mui/icons-material/DateRange';
-import CloseIcon from '@mui/icons-material/Close';
 import BusinessCenterIcon from '@mui/icons-material/BusinessCenter';
 import data from "@/components/experienceComponents/data";
-import data2 from "@/components/projectsComponents/data"
 
 import Image from "next/image";
 
 import styles from "@/styles/pagesSpecficStyles/experience.module.css";
-import { Box, IconButton, Modal } from "@mui/material";
+import { Box, IconButton } from "@mui/material";
 import { motion } from "framer-motion";
 import { useStringContext } from "@/components/StringContext";
-import { useCurrentPageContext } from "@/components/CurrentPageContext";
+import { useCurrentPageContext } from "@/components/contexts/CurrentPageContext";
 import { useRouter } from "next/navigation";
-import { useWindowWidth } from "@/components/WindowWidthContext";
-import { useDarkMode } from "@/components/DarkModeContext";
+import { useWindowWidth } from "@/components/contexts/WindowWidthContext";
+import { useDarkMode } from "@/components/contexts/DarkModeContext";
 
 export default function Experience() {
   const windowWidth = useWindowWidth();
@@ -139,7 +136,7 @@ export default function Experience() {
                     sx={{
                         display: 'flex',
                         alignItems: 'center',
-                        backgroundColor: isDarkMode ? "#5D5D5D" : "#AFAFAF",
+                        backgroundColor: isDarkMode ? "#545454" : "#e2e2e2",
                         position: 'absolute',
                         top: 0,
                         left: 0,
@@ -154,7 +151,7 @@ export default function Experience() {
                     }}
                 />
                 <div className={styles.flipCardInner} style={{width: "clamp(300px, 50vw, 800px)", minHeight: "clamp(600px, 50vw, 700px)"}}>
-                    <div className={styles.flipCardFront} style={{backgroundColor: isDarkMode ? "" : "#eaeaea", boxShadow: isDarkMode ? "" : "rgba(0, 0, 0, 0.07) 0px 1px 1px, rgba(0, 0, 0, 0.07) 0px 2px 2px, rgba(0, 0, 0, 0.07) 0px 4px 4px, rgba(0, 0, 0, 0.07) 0px 8px 8px, rgba(0, 0, 0, 0.07) 0px 16px 16px"}}>
+                    <div className={styles.flipCardFront} style={{backgroundColor: isDarkMode ? "" : "rgb(250, 250, 250)", boxShadow: isDarkMode ? "" : "rgba(0, 0, 0, 0.07) 0px 1px 1px, rgba(0, 0, 0, 0.07) 0px 2px 2px, rgba(0, 0, 0, 0.07) 0px 4px 4px, rgba(0, 0, 0, 0.07) 0px 8px 8px, rgba(0, 0, 0, 0.07) 0px 16px 16px"}}>
                         <div className={styles.cardLogo}>
                           <Image priority src={item.logo} alt="logo" width={200} height={200} style={{opacity: isDarkMode ? 0.6 : 0.8, filter: "brightness(0.6)"}}/>
                         </div>
@@ -201,8 +198,8 @@ export default function Experience() {
                         </div>
                     </div>
 
-                    <div className={styles.flipCardBack} style={{backgroundColor: isDarkMode ? "#232323" : "#eaeaea", height: "100%", boxShadow: isDarkMode ? "" : "rgba(0, 0, 0, 0.07) 0px 1px 1px, rgba(0, 0, 0, 0.07) 0px 2px 2px, rgba(0, 0, 0, 0.07) 0px 4px 4px, rgba(0, 0, 0, 0.07) 0px 8px 8px, rgba(0, 0, 0, 0.07) 0px 16px 16px"}}>
-                      <div className={styles.learningsContainer} style={{overflowY: "scroll", minHeight: "clamp(400px, 40vw, 500px)",}}>
+                    <div className={styles.flipCardBack} style={{backgroundColor: isDarkMode ? "#232323" : "rgb(250, 250, 250)", height: "100%", boxShadow: isDarkMode ? "" : "rgba(0, 0, 0, 0.07) 0px 1px 1px, rgba(0, 0, 0, 0.07) 0px 2px 2px, rgba(0, 0, 0, 0.07) 0px 4px 4px, rgba(0, 0, 0, 0.07) 0px 8px 8px, rgba(0, 0, 0, 0.07) 0px 16px 16px"}}>
+                      <div className={styles.learningsContainer} style={{overflowY: "scroll", minHeight: "clamp(400px, 40vw, 500px)", paddingBottom: "23px",  paddingLeft: "24px",  paddingRight: "24px"}}>
                         {item.learnigs.map((learning: any, index: any) => {
                           const colors = ["#556398", "#424242", "#654545"];
 
@@ -247,12 +244,12 @@ export default function Experience() {
                   ease: "easeInOut",
                 }}
               >
-                <div className={styles.content} style={{width: "clamp(700px, 60vw, 1300px)", backgroundColor: isDarkMode ? "" : "#eaeaea", boxShadow: isDarkMode ? "" : "rgba(0, 0, 0, 0.07) 0px 1px 1px, rgba(0, 0, 0, 0.07) 0px 2px 2px, rgba(0, 0, 0, 0.07) 0px 4px 4px, rgba(0, 0, 0, 0.07) 0px 8px 8px, rgba(0, 0, 0, 0.07) 0px 16px 16px"}}>
+                <div className={styles.content} style={{width: "clamp(700px, 60vw, 1300px)", backgroundColor: isDarkMode ? "" : "rgb(250, 250, 250)", boxShadow: isDarkMode ? "" : "rgba(0, 0, 0, 0.07) 0px 1px 1px, rgba(0, 0, 0, 0.07) 0px 2px 2px, rgba(0, 0, 0, 0.07) 0px 4px 4px, rgba(0, 0, 0, 0.07) 0px 8px 8px, rgba(0, 0, 0, 0.07) 0px 16px 16px"}}>
                   <Box
                     sx={{
                       display: 'flex',
                       alignItems: 'center',
-                      backgroundColor: isDarkMode ? "#5D5D5D" : "#AFAFAF",
+                      backgroundColor: isDarkMode ? "#545454" : "#e2e2e2",
                       position: 'absolute',
                       top: 0,
                       left: 0,

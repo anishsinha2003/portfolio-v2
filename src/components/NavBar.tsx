@@ -1,27 +1,20 @@
 "use client"
-import React, { ReactNode, useEffect, useState } from "react"; // Import ReactNode to type the children prop
-import Image from "next/image";
+import React, { useEffect, useState } from "react"; // Import ReactNode to type the children prop
 import styles from "@/styles/navBar.module.css";
-import Link from "next/link";
 import Tabs from '@mui/material/Tabs';
 import Tab from '@mui/material/Tab';
 import { styled } from '@mui/material/styles';
 import { usePathname, useRouter } from "next/navigation";
 import { useStringContext } from './StringContext';
-import { useCurrentPageContext } from "./CurrentPageContext";
-import PhoneIcon from '@mui/icons-material/Phone';
+import { useCurrentPageContext } from "./contexts/CurrentPageContext";
 
-import PersonIcon from '@mui/icons-material/Person';
-import SchoolIcon from '@mui/icons-material/School';
-import WorkIcon from '@mui/icons-material/Work';
-import AccountTreeIcon from '@mui/icons-material/AccountTree';
 import MenuIcon from '@mui/icons-material/Menu';
 
 import Menu from '@mui/material/Menu';
 import MenuItem from '@mui/material/MenuItem';
-import { Button, IconButton } from "@mui/material";
-import { useWindowWidth } from "./WindowWidthContext";
-import { useDarkMode } from "./DarkModeContext";
+import { IconButton } from "@mui/material";
+import { useWindowWidth } from "./contexts/WindowWidthContext";
+import { useDarkMode } from "./contexts/DarkModeContext";
 
 
 
@@ -176,14 +169,83 @@ const NavBar = () => {
               anchorEl={anchorEl}
               open={open}
               onClose={handleClose}
-              MenuListProps={{
-                'aria-labelledby': 'basic-button',
+              sx={{
+                '& .MuiPaper-root': {
+                  backgroundColor: isDarkMode ? '#232323' : "white",
+                  color: '#c6c6c6',
+                  fontFamily: 'montserrat',
+                  letterSpacing: "1px"
+                },
               }}
             >
-              <MenuItem onClick={handleChangeMenu}>About Me</MenuItem>
-              <MenuItem onClick={handleChangeMenu}>Education</MenuItem>
-              <MenuItem onClick={handleChangeMenu}>Projects</MenuItem>
-              <MenuItem onClick={handleChangeMenu}>Experience</MenuItem>
+              <MenuItem
+                onClick={handleChangeMenu}
+                sx={{
+                  fontSize: '14px',
+                  transition: "0.5s",
+                  letterSpacing: 0.3,
+                  color: isDarkMode ? '#bababa' : "#3d3d3d",
+                  fontFamily: "montserrat",
+                  '&:hover': {
+                    backgroundColor: isDarkMode ? '#6d3d3d' : "#FFB8B7",
+                    cursor :"pointer",
+                    color: isDarkMode ? '#ffffff' : "#3d3d3d",
+                  },
+                }}
+              >
+                About Me
+              </MenuItem>
+              <MenuItem
+                onClick={handleChangeMenu}
+                sx={{
+                  fontSize: '14px',
+                  transition: "0.5s",
+                  letterSpacing: 0.3,
+                  color: isDarkMode ? '#bababa' : "#3d3d3d",
+                  fontFamily: "montserrat",
+                  '&:hover': {
+                    backgroundColor: isDarkMode ? '#6d3d3d' : "#FFB8B7",
+                    cursor :"pointer",
+                    color: isDarkMode ? '#ffffff' : "#3d3d3d",
+                  },
+                }}
+              >
+                Education
+              </MenuItem>
+              <MenuItem
+                onClick={handleChangeMenu}
+                sx={{
+                  fontSize: '14px',
+                  transition: "0.5s",
+                  letterSpacing: 0.3,
+                  color: isDarkMode ? '#bababa' : "#3d3d3d",
+                  fontFamily: "montserrat",
+                  '&:hover': {
+                    backgroundColor: isDarkMode ? '#6d3d3d' : "#FFB8B7",
+                    cursor :"pointer",
+                    color: isDarkMode ? '#ffffff' : "#3d3d3d",
+                  },
+                }}
+              >
+                Projects
+              </MenuItem>
+              <MenuItem
+                onClick={handleChangeMenu}
+                sx={{
+                  fontSize: '14px',
+                  transition: "0.5s",
+                  letterSpacing: 0.3,
+                  color: isDarkMode ? '#bababa' : "#3d3d3d",
+                  fontFamily: "montserrat",
+                  '&:hover': {
+                    backgroundColor: isDarkMode ? '#6d3d3d' : "#FFB8B7",
+                    cursor :"pointer",
+                    color: isDarkMode ? '#ffffff' : "#3d3d3d",
+                  },
+                }}
+              >
+                Experience
+              </MenuItem>
             </Menu>
           </>
         :

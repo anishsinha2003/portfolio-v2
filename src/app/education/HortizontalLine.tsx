@@ -1,14 +1,7 @@
 "use client"
-import { useEffect, useState } from "react";
 import Image from "next/image";
-import layoutStyle from "@/styles/pageLayout.module.css"
-import { motion } from "framer-motion";
-import { useStringContext } from "@/components/StringContext";
-import { usePathname, useRouter } from "next/navigation";
-import { useCurrentPageContext } from "@/components/CurrentPageContext";
-import { Box, styled, Tooltip, tooltipClasses, TooltipProps } from "@mui/material";
-import UnswPage from "./UnswPage";
-import { useDarkMode } from "@/components/DarkModeContext";
+import { Box, Tooltip } from "@mui/material";
+import { useDarkMode } from "@/components/contexts/DarkModeContext";
 
 export default function HortizontalLine() {
   const {isDarkMode} = useDarkMode();
@@ -72,7 +65,7 @@ export default function HortizontalLine() {
               paddingLeft: '20px',
             }}
           />
-          <Image priority src={"/mfhs.png"} width={50} height={50} alt={""} style={{opacity: isDarkMode ? 0.6 : 0.8}}/>
+          <Image priority src={"/educationIcons/mfhs.png"} width={50} height={50} alt={""} style={{opacity: isDarkMode ? 0.6 : 0.8}}/>
           &nbsp;&nbsp;&nbsp;&nbsp;
           <div style={{fontFamily: "montserrat", fontSize: "17px", color: isDarkMode ? "white" : "black", opacity: isDarkMode ? "0.3" : "0.5", letterSpacing: "0.5px"}}>
             Model Farms High School
@@ -161,7 +154,8 @@ export default function HortizontalLine() {
             slotProps={{
               tooltip: {
                 sx: {
-                  backgroundColor: isDarkMode ? "#2b2b2b" : "#d8d8d8",
+                  backgroundColor: isDarkMode ? "#2b2b2b" : "rgb(250, 250, 250)",
+                  border: isDarkMode ? "1px solid #595959" : "1px solid #c6c6c6",
                   minWidth: "600px",
                 },
               },
@@ -178,13 +172,15 @@ export default function HortizontalLine() {
                 color: "#be4141",
                 textDecoration: "underline",
                 opacity: isDarkMode ? 0.5 : 0.8,
+                cursor: "default"
+
 
               }}
             >
               SHOW MORE
             </div>
           </Tooltip>
-          <Image priority src={"/cths.png"} width={50} height={50} alt={""} style={{opacity: isDarkMode ? 0.6 : 0.8}}/>
+          <Image priority src={"/educationIcons/cths.png"} width={50} height={50} alt={""} style={{opacity: isDarkMode ? 0.6 : 0.8}}/>
           &nbsp;&nbsp;&nbsp;&nbsp;
           <div style={{fontFamily: "montserrat", fontSize: "17px", color: isDarkMode ? "white" : "black", opacity: isDarkMode ? "0.3" : "0.5", letterSpacing: "0.5px"}}>
             Cherrybrook Tech High School
@@ -288,7 +284,8 @@ export default function HortizontalLine() {
             slotProps={{
               tooltip: {
                 sx: {
-                  backgroundColor: isDarkMode ? "#2b2b2b" : "#d8d8d8",
+                  backgroundColor: isDarkMode ? "#2b2b2b" : "rgb(250, 250, 250)",
+                  border: isDarkMode ? "1px solid #595959" : "1px solid #c6c6c6",
                   minWidth: "600px",
                 },
               },
@@ -305,14 +302,14 @@ export default function HortizontalLine() {
               color: "#be4141",
               textDecoration: "underline",
               opacity: isDarkMode ? 0.5 : 0.8,
-              cursor: "pointer"
+              cursor: "default"
 
             }}
           >
             SHOW MORE
           </div>
           </Tooltip>
-          <Image priority src={"/unsw.png"} width={40} height={40} alt={""} style={{opacity: isDarkMode ? 0.6 : 0.8}}/>
+          <Image priority src={"/educationIcons/unsw.png"} width={40} height={40} alt={""} style={{opacity: isDarkMode ? 0.6 : 0.8}}/>
           &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
           <div style={{fontFamily: "montserrat", fontSize: "17px", color: isDarkMode ? "white" : "black", opacity: isDarkMode ? "0.3" : "0.5", letterSpacing: "0.5px"}}>
             University of New South Wales

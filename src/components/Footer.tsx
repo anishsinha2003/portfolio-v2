@@ -1,15 +1,14 @@
 "use client"
-import React, { ReactNode, useEffect, useState } from "react"; // Import ReactNode to type the children prop
-import Image from "next/image";
+import { useState } from "react"; // Import ReactNode to type the children prop
 import styles from "@/styles/footer.module.css";
 import { styled } from '@mui/material/styles';
-import Switch, { SwitchProps } from '@mui/material/Switch';
+import Switch from '@mui/material/Switch';
 import { FormControlLabel, Snackbar } from "@mui/material";
 import GitHubIcon from '@mui/icons-material/GitHub';
 import LinkedInIcon from '@mui/icons-material/LinkedIn';
 import EmailIcon from '@mui/icons-material/Email';
-import { useWindowWidth } from "./WindowWidthContext";
-import { useDarkMode } from "./DarkModeContext";
+import { useWindowWidth } from "./contexts/WindowWidthContext";
+import { useDarkMode } from "./contexts/DarkModeContext";
 
 const Footer = () => {
   const [emailCopiedSnackBarOpen, setEmailCopiedSnackBarOpen] = useState(false);

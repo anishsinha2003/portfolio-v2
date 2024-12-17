@@ -3,7 +3,7 @@
     min-height: 100vh;
     height: 100%;
     background-color: #151515;
-    background-image: url('/darkModeBg.png');
+    background-image: url('/backgrounds/darkModeBg.png');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;

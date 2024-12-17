@@ -1,14 +1,6 @@
 "use client"
-import { useEffect, useState } from "react";
-import Image from "next/image";
-import layoutStyle from "@/styles/pageLayout.module.css"
-import { motion } from "framer-motion";
-import { useStringContext } from "@/components/StringContext";
-import { usePathname, useRouter } from "next/navigation";
-import { useCurrentPageContext } from "@/components/CurrentPageContext";
-import { Box, styled, Tooltip, tooltipClasses, TooltipProps } from "@mui/material";
-import UnswPage from "./UnswPage";
-import { useDarkMode } from "@/components/DarkModeContext";
+import { Tooltip } from "@mui/material";
+import { useDarkMode } from "@/components/contexts/DarkModeContext";
 
 export default function VerticalLine() {
   const {isDarkMode} = useDarkMode();
@@ -102,7 +94,7 @@ export default function VerticalLine() {
                 width: "30px",
                 height: "30px",
                 // opacity: 0.8,
-                backgroundImage: "url(/mfhs.png)",
+                backgroundImage: "url(/educationIcons/mfhs.png)",
                 backgroundSize: "cover",
                 borderRadius: "50%",
               }}
@@ -192,7 +184,8 @@ export default function VerticalLine() {
               slotProps={{
                 tooltip: {
                   sx: {
-                    backgroundColor: isDarkMode ? "#2b2b2b" : "#d8d8d8",
+                    backgroundColor: isDarkMode ? "#2b2b2b" : "rgb(250, 250, 250)",
+                    border: isDarkMode ? "1px solid #595959" : "1px solid #c6c6c6",
                     minWidth: "300px",
                   },
                 },
@@ -209,7 +202,7 @@ export default function VerticalLine() {
                   color: "#be4141",
                   textDecoration: "underline",
                   opacity: isDarkMode ? 0.5 : 0.8,
-
+                  cursor: "default"
                 }}
               >
                 SHOW MORE
@@ -248,7 +241,7 @@ export default function VerticalLine() {
                 width: "30px",
                 height: "30px",
                 // opacity: 0.9,
-                backgroundImage: "url(/cths.png)",
+                backgroundImage: "url(/educationIcons/cths.png)",
                 backgroundSize: "cover",
                 borderRadius: "50%",
               }}
@@ -336,7 +329,8 @@ export default function VerticalLine() {
               slotProps={{
                 tooltip: {
                   sx: {
-                    backgroundColor: isDarkMode ? "#2b2b2b" : "#d8d8d8",
+                    backgroundColor: isDarkMode ? "#2b2b2b" : "rgb(250, 250, 250)",
+                    border: isDarkMode ? "1px solid #595959" : "1px solid #c6c6c6",
                     minWidth: "300px",
                   },
                 },
@@ -353,7 +347,7 @@ export default function VerticalLine() {
                   color: "#be4141",
                   textDecoration: "underline",
                   opacity: isDarkMode ? 0.5 : 0.8,
-
+                  cursor: "default"
                 }}
               >
                 SHOW MORE
@@ -391,7 +385,7 @@ export default function VerticalLine() {
               style={{
                 width: "30px",
                 height: "30px",
-                backgroundImage: "url(/unsw.png)",
+                backgroundImage: "url(/educationIcons/unsw.png)",
                 backgroundSize: "cover",
               }}
             ></div>

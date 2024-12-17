@@ -7,7 +7,7 @@ import Image from "next/image";
 
 import styles from "@/styles/carousel.module.css";
 import { Box, IconButton, Modal } from "@mui/material";
-import { useDarkMode } from "../DarkModeContext";
+import { useDarkMode } from "../contexts/DarkModeContext";
 
 export default (props: any) => {
   const {isDarkMode} = useDarkMode();
@@ -161,12 +161,12 @@ const SliderContent = ({
 
   }
   return (
-    <div className={styles.sliderContentCardContainer} style={{backgroundColor: isDarkMode ? "" : "#eaeaea", transition: "0.5s"}}>
+    <div className={styles.sliderContentCardContainer} style={{backgroundColor: isDarkMode ? "" : "rgb(250, 250, 250)", transition: "0.5s"}}>
       <Box
         sx={{
           display: 'flex',
           alignItems: 'center',
-          backgroundColor: isDarkMode ? "#5D5D5D" : "#AFAFAF",
+          backgroundColor: isDarkMode ? "#545454" : "#e2e2e2",
           position: 'absolute',
           top: 0,
           left: 0,

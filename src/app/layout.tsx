@@ -3,9 +3,9 @@ import "./globals.css";
 import "@fontsource/montserrat/700.css";
 import "@fontsource/montserrat/400.css";
 import { StringProvider } from "@/components/StringContext";
-import { CurrentPageProvider } from "@/components/CurrentPageContext";
-import { WindowWidthProvider } from "@/components/WindowWidthContext";
-import { DarkModeProvider } from "@/components/DarkModeContext";
+import { CurrentPageProvider } from "@/components/contexts/CurrentPageContext";
+import { WindowWidthProvider } from "@/components/contexts/WindowWidthContext";
+import { DarkModeProvider } from "@/components/contexts/DarkModeContext";
 import Main from "@/components/Main";
 
 

@@ -10,8 +10,8 @@ import Image from "next/image";
 import styles from "@/styles/gridLayoutCards.module.css";
 import { Box, IconButton, Modal } from "@mui/material";
 import { motion } from "framer-motion";
-import { useWindowWidth } from "../WindowWidthContext";
-import { useDarkMode } from "../DarkModeContext";
+import { useWindowWidth } from "../contexts/WindowWidthContext";
+import { useDarkMode } from "../contexts/DarkModeContext";
 
 const GridLayoutCards = () => {
     const {isDarkMode} = useDarkMode();
@@ -42,7 +42,8 @@ const GridLayoutCards = () => {
           window.open(linkObj.link, "_blank");
         }
 
-        if (linkObj.type === "embedded" && windowWidth >= 1250) {
+        if (linkObj.type === "embedded" && windowWidth >= 1550) {
+            console.log(linkObj)
           setDemoVideoOpen(linkObj.link)
         } else {
             if (linkObj.browserLink) {
@@ -144,7 +145,7 @@ const GridLayoutCards = () => {
                             sx={{
                                 display: 'flex',
                                 alignItems: 'center',
-                                backgroundColor: isDarkMode ? "#5D5D5D" : "#AFAFAF",
+                                backgroundColor: isDarkMode ? "#333333" : "#e2e2e2",
                                 position: 'absolute',
                                 top: 0,
                                 left: 0,
@@ -159,7 +160,7 @@ const GridLayoutCards = () => {
                             }}
                         />
                         <div className={styles.flipCardInner} style={{width: "clamp(300px, 50vw, 800px)", height: "400px"}}>
-                            <div className={styles.flipCardFront} style={{backgroundColor: isDarkMode ? "" : "#eaeaea", boxShadow: isDarkMode ? "" : "rgba(0, 0, 0, 0.07) 0px 1px 1px, rgba(0, 0, 0, 0.07) 0px 2px 2px, rgba(0, 0, 0, 0.07) 0px 4px 4px, rgba(0, 0, 0, 0.07) 0px 8px 8px, rgba(0, 0, 0, 0.07) 0px 16px 16px"}}>
+                            <div className={styles.flipCardFront} style={{backgroundColor: isDarkMode ? "" : "rgb(250, 250, 250)", boxShadow: isDarkMode ? "" : "rgba(0, 0, 0, 0.07) 0px 1px 1px, rgba(0, 0, 0, 0.07) 0px 2px 2px, rgba(0, 0, 0, 0.07) 0px 4px 4px, rgba(0, 0, 0, 0.07) 0px 8px 8px, rgba(0, 0, 0, 0.07) 0px 16px 16px"}}>
                                 <div className={styles.cardTitle} style={{color: isDarkMode ? "" : "black", opacity: isDarkMode ? "" : 0.6}}>
                                     {item.title}
                                 </div>
@@ -178,14 +179,14 @@ const GridLayoutCards = () => {
                                     </button>
                                 </div>
                             </div>
-                            <div className={styles.flipCardBack} style={{backgroundColor: isDarkMode ? "" : "#eaeaea", boxShadow: isDarkMode ? "" : "rgba(0, 0, 0, 0.07) 0px 1px 1px, rgba(0, 0, 0, 0.07) 0px 2px 2px, rgba(0, 0, 0, 0.07) 0px 4px 4px, rgba(0, 0, 0, 0.07) 0px 8px 8px, rgba(0, 0, 0, 0.07) 0px 16px 16px"}}>
-                                <div className={styles.cardSkillsTitle} style={{opacity: isDarkMode ? "" : "0.2"}}>
+                            <div className={styles.flipCardBack} style={{backgroundColor: isDarkMode ? "" : "#fff7f7", boxShadow: isDarkMode ? "" : "rgba(0, 0, 0, 0.07) 0px 1px 1px, rgba(0, 0, 0, 0.07) 0px 2px 2px, rgba(0, 0, 0, 0.07) 0px 4px 4px, rgba(0, 0, 0, 0.07) 0px 8px 8px, rgba(0, 0, 0, 0.07) 0px 16px 16px"}}>
+                                <div className={styles.cardSkillsTitle} style={{color: isDarkMode ? "" : "black", opacity: isDarkMode ? "0.3" : "0.1"}}>
                                     SKILLS
                                 </div>
-                                <div className={styles.cardSkills}  style={{color: isDarkMode ? "" : "black", opacity: isDarkMode ? "" : 0.4}}>
+                                <div className={styles.cardSkills} style={{color: isDarkMode ? "" : "black", opacity: isDarkMode ? "0.8" : 0.4}}>
                                     {item.skills.join(', ')}
                                 </div>
-                                <div className={styles.cardLinksTitle} style={{color: isDarkMode ? "" : "black", opacity: isDarkMode ? "" : 0.2}}>
+                                <div className={styles.cardLinksTitle} style={{color: isDarkMode ? "" : "black", opacity: isDarkMode ? "0.3" : 0.1}}>
                                     { item.links.length === 0
                                     ? <></>
                                     : <>LINKS</>
@@ -225,7 +226,7 @@ const GridLayoutCards = () => {
                                     sx={{
                                         display: 'flex',
                                         alignItems: 'center',
-                                        backgroundColor: isDarkMode ? "#5D5D5D" : "#AFAFAF",
+                                        backgroundColor: isDarkMode ? "#333333" : "#e2e2e2",
                                         position: 'absolute',
                                         top: 0,
                                         left: 0,
@@ -240,7 +241,7 @@ const GridLayoutCards = () => {
                                     }}
                                 />
                                 <div className={styles.flipCardInner}>
-                                    <div className={styles.flipCardFront} style={{backgroundColor: isDarkMode ? "" : "#eaeaea", boxShadow: isDarkMode ? "" : "rgba(0, 0, 0, 0.07) 0px 1px 1px, rgba(0, 0, 0, 0.07) 0px 2px 2px, rgba(0, 0, 0, 0.07) 0px 4px 4px, rgba(0, 0, 0, 0.07) 0px 8px 8px, rgba(0, 0, 0, 0.07) 0px 16px 16px"}}>
+                                    <div className={styles.flipCardFront} style={{backgroundColor: isDarkMode ? "" : "rgb(250, 250, 250)", boxShadow: isDarkMode ? "" : "rgba(0, 0, 0, 0.07) 0px 1px 1px, rgba(0, 0, 0, 0.07) 0px 2px 2px, rgba(0, 0, 0, 0.07) 0px 4px 4px, rgba(0, 0, 0, 0.07) 0px 8px 8px, rgba(0, 0, 0, 0.07) 0px 16px 16px"}}>
                                         <div className={styles.cardTitle} style={{color: isDarkMode ? "" : "black", opacity: isDarkMode ? "" : 0.6}}>
                                             {item.title}
                                         </div>
@@ -264,14 +265,14 @@ const GridLayoutCards = () => {
                                             </button>
                                         </div>
                                     </div>
-                                    <div className={styles.flipCardBack} style={{backgroundColor: isDarkMode ? "" : "#eaeaea", boxShadow: isDarkMode ? "" : "rgba(0, 0, 0, 0.07) 0px 1px 1px, rgba(0, 0, 0, 0.07) 0px 2px 2px, rgba(0, 0, 0, 0.07) 0px 4px 4px, rgba(0, 0, 0, 0.07) 0px 8px 8px, rgba(0, 0, 0, 0.07) 0px 16px 16px"}}>
-                                        <div className={styles.cardSkillsTitle} style={{opacity: isDarkMode ? "" : "0.2"}}>
+                                    <div className={styles.flipCardBack} style={{backgroundColor: isDarkMode ? "" : "#fff7f7", boxShadow: isDarkMode ? "" : "rgba(0, 0, 0, 0.07) 0px 1px 1px, rgba(0, 0, 0, 0.07) 0px 2px 2px, rgba(0, 0, 0, 0.07) 0px 4px 4px, rgba(0, 0, 0, 0.07) 0px 8px 8px, rgba(0, 0, 0, 0.07) 0px 16px 16px"}}>
+                                        <div className={styles.cardSkillsTitle} style={{color: isDarkMode ? "" : "black", opacity: isDarkMode ? "0.3" : "0.1"}}>
                                             SKILLS
                                         </div>
-                                        <div className={styles.cardSkills} style={{color: isDarkMode ? "" : "black", opacity: isDarkMode ? "" : 0.4}}>
+                                        <div className={styles.cardSkills} style={{color: isDarkMode ? "" : "black", opacity: isDarkMode ? "0.8" : 0.4}}>
                                             {item.skills.join(', ')}
                                         </div>
-                                        <div className={styles.cardLinksTitle} style={{color: isDarkMode ? "" : "black", opacity: isDarkMode ? "" : 0.2}}>
+                                        <div className={styles.cardLinksTitle} style={{color: isDarkMode ? "" : "black", opacity: isDarkMode ? "0.3" : 0.1}}>
                                             { item.links.length === 0
                                             ? <></>
                                             : <>LINKS</>

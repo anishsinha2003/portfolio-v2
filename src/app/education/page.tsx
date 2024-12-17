@@ -1,15 +1,14 @@
 "use client"
 import { useEffect, useState } from "react";
-import Image from "next/image";
-import layoutStyle from "@/styles/pageLayout.module.css"
+import layoutStyle from "@/styles/pageLayout.module.css";
 import { motion } from "framer-motion";
 import { useStringContext } from "@/components/StringContext";
-import { usePathname, useRouter } from "next/navigation";
-import { useCurrentPageContext } from "@/components/CurrentPageContext";
-import { Box, styled, Tooltip, tooltipClasses, TooltipProps } from "@mui/material";
+import { useRouter } from "next/navigation";
+import { useCurrentPageContext } from "@/components/contexts/CurrentPageContext";
+import { styled, Tooltip, tooltipClasses, TooltipProps } from "@mui/material";
 import HortizontalLine from "./HortizontalLine";
 import VerticalLine from "./VerticalLine";
-import { useWindowWidth } from "@/components/WindowWidthContext";
+import { useWindowWidth } from "@/components/contexts/WindowWidthContext";
 
 
 export default function Education() {

@@ -1,9 +1,8 @@
 "use client"
-import Image from "next/image";
-import layoutStyle from "@/styles/pageLayout.module.css"
+import layoutStyle from "@/styles/pageLayout.module.css";
 import { useEffect, useState } from "react";
 import { useStringContext } from "@/components/StringContext";
-import { useCurrentPageContext } from "@/components/CurrentPageContext";
+import { useCurrentPageContext } from "@/components/contexts/CurrentPageContext";
 import { useRouter } from "next/navigation";
 import { motion } from "framer-motion";
 import Carousel from "@/components/projectsComponents/Carousel";
@@ -12,8 +11,8 @@ import GridLayoutCards from "@/components/projectsComponents/GridLayoutCards";
 import { ToggleButton, ToggleButtonGroup } from "@mui/material";
 import ViewCarouselIcon from '@mui/icons-material/ViewCarousel';
 import ViewModuleIcon from '@mui/icons-material/ViewModule';
-import { useWindowWidth } from "@/components/WindowWidthContext";
-import { useDarkMode } from "@/components/DarkModeContext";
+import { useWindowWidth } from "@/components/contexts/WindowWidthContext";
+import { useDarkMode } from "@/components/contexts/DarkModeContext";
 
 export default function Projects() {
   const windowWidth = useWindowWidth();
@@ -82,7 +81,7 @@ export default function Projects() {
   return (
     <div className={layoutStyle.main} style={{backgroundColor: "transparent", position: "relative"}}>
       <motion.div
-        initial={{ x: animation.initial, opacity: 0 }}  // Set initial opacity to 0
+        initial={{ x: animation.initial, opacity: 0 }}
         animate={{ x: isVisible ? 0 : animation.animate, opacity: isVisible ? 1 : 0 }}
         exit={{ x: isVisible ? animation.animate : animation.animate, opacity: isVisible ? 0 : 1 }}
         transition={{ type: "spring", duration: 0.7 }}
@@ -99,10 +98,6 @@ export default function Projects() {
                     exclusive
                     onChange={handleSelectLayout}
                     sx={{
-                      // position: "absolute",
-                      // top: "0",
-                      // display: showToggle ? "block" : "none",
-                      // left: "50%",
                       opacity:  0.8,
                     }}
                   >

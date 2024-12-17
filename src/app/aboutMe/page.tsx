@@ -1,15 +1,14 @@
 "use client"
 import { useEffect, useState } from "react";
 import Image from "next/image";
-import layoutStyle from "@/styles/pageLayout.module.css"
+import layoutStyle from "@/styles/pageLayout.module.css";
 import { motion } from "framer-motion";
 import { useStringContext } from "@/components/StringContext";
-import { useCurrentPageContext } from "@/components/CurrentPageContext";
+import { useCurrentPageContext } from "@/components/contexts/CurrentPageContext";
 import { useRouter } from "next/navigation";
-import { duration } from "@mui/material";
-import style from "@/styles/pagesSpecficStyles/aboutMe.module.css"
-import { useWindowWidth } from "@/components/WindowWidthContext";
-import { useDarkMode } from "@/components/DarkModeContext";
+import style from "@/styles/pagesSpecficStyles/aboutMe.module.css";
+import { useWindowWidth } from "@/components/contexts/WindowWidthContext";
+import { useDarkMode } from "@/components/contexts/DarkModeContext";
 
 export default function AboutMe() {
   const windowWidth = useWindowWidth();
