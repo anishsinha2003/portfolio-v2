@@ -2,14 +2,37 @@
 import Image from "next/image";
 import { Box, Tooltip } from "@mui/material";
 import { useDarkMode } from "@/components/contexts/DarkModeContext";
+import { useEffect, useRef, useState } from "react";
 
 export default function HortizontalLine() {
   const {isDarkMode} = useDarkMode();
 
+  const [unswToolTipOpen, setUnswToolTipOpen] = useState(false)
+  const [cthsToolTipOpen, setCthsToolTipOpen] = useState(false)
+
+  const cthsRef = useRef<HTMLDivElement>(null);
+  const unswRef = useRef<HTMLDivElement>(null);
+
+  const handleClickOutside = (event: MouseEvent) => {
+    if (cthsRef.current && !cthsRef.current.contains(event.target as Node)) {
+      setCthsToolTipOpen(false)
+    }
+    if (unswRef.current && !unswRef.current.contains(event.target as Node)) {
+      setUnswToolTipOpen(false)
+    }
+  };
+
+  useEffect(() => {
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, []);
+
   return (
     <div
     style={{width: "100%", height: "2px", backgroundColor: "grey", position: "relative", opacity: isDarkMode ? 1 : 0.8}}
-  >
+    >
     {/* mfhs */}
     <div
       style={{
@@ -134,9 +157,11 @@ export default function HortizontalLine() {
             }}
           />
           <Tooltip
+            open={cthsToolTipOpen}
+            disableHoverListener
             placement="top-start"
             title={
-              <div style={{ color: "#9b9b9b", padding: 14, fontFamily: "montserrat", fontSize: 15, opacity: isDarkMode ? 0.5 : 1, textAlign: "left", letterSpacing: "0.7px" }}>
+              <div style={{ color: "#9b9b9b", padding: 14, fontFamily: "montserrat", fontSize: 15, opacity: isDarkMode ? 0.5 : 1, textAlign: "left", letterSpacing: "0.7px", lineHeight: 1.7 }}>
                 Graduated with an ATAR of&nbsp;
                 <span style={{fontWeight: "bold", color: "#c47b7b"}}>96.1</span>&nbsp;
                 with band 5 or 6 in &nbsp;
@@ -162,6 +187,7 @@ export default function HortizontalLine() {
             }}
           >
             <div
+              ref={cthsRef}
               style={{
                 position : "absolute",
                 top: -30,
@@ -172,12 +198,14 @@ export default function HortizontalLine() {
                 color: "#be4141",
                 textDecoration: "underline",
                 opacity: isDarkMode ? 0.5 : 0.8,
-                cursor: "default"
-
-
+                cursor: "pointer"
               }}
+              onClick={() => setCthsToolTipOpen(!cthsToolTipOpen)}
             >
-              SHOW MORE
+              {cthsToolTipOpen
+                ? <>HIDE</>
+                : <>SHOW MORE</>
+              }
             </div>
           </Tooltip>
           <Image priority src={"/educationIcons/cths.png"} width={50} height={50} alt={""} style={{opacity: isDarkMode ? 0.6 : 0.8}}/>
@@ -268,9 +296,11 @@ export default function HortizontalLine() {
             }}
           />
          <Tooltip
+            open={unswToolTipOpen}
+            disableHoverListener
             placement="top-start"
             title={
-              <div style={{ color: "#9b9b9b", padding: 14, fontFamily: "montserrat", fontSize: 15, opacity: isDarkMode ? 0.5 : 1, textAlign: "left", letterSpacing: "0.7px" }}>
+              <div style={{ color: "#9b9b9b", padding: 14, fontFamily: "montserrat", fontSize: 15, opacity: isDarkMode ? 0.5 : 1, textAlign: "left", letterSpacing: "0.7px", lineHeight: 1.7 }}>
                  <span style={{fontWeight: "bold", color: "#c47b7b"}}>Master of Biomedical Engineering/Bachelor of Software Engineering</span>&nbsp;
                   with a &nbsp;
                   <span style={{fontWeight: "bold"}}>Distinction WAM (75%+)</span>.
@@ -292,6 +322,7 @@ export default function HortizontalLine() {
             }}
           >
           <div
+            ref={unswRef}
             style={{
               position : "absolute",
               bottom: -30,
@@ -302,11 +333,14 @@ export default function HortizontalLine() {
               color: "#be4141",
               textDecoration: "underline",
               opacity: isDarkMode ? 0.5 : 0.8,
-              cursor: "default"
-
+              cursor: "pointer"
             }}
+            onClick={() => setUnswToolTipOpen(!unswToolTipOpen)}
           >
-            SHOW MORE
+            {unswToolTipOpen
+              ? <>HIDE</>
+              : <>SHOW MORE</>
+            }
           </div>
           </Tooltip>
           <Image priority src={"/educationIcons/unsw.png"} width={40} height={40} alt={""} style={{opacity: isDarkMode ? 0.6 : 0.8}}/>
