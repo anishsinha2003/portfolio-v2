@@ -134,7 +134,7 @@ const GridLayoutCards = () => {
             >
                 {windowWidth < 715
                 ?
-                    <div style={{display: "flex", flexDirection: "column", overflow: "scroll", alignItems: "center", justifyContent: "flex-start", height: "700px", width: "clamp(320px, 60vw, 820px)", gap: "50px"}}>
+                    <div style={{display: "flex", flexDirection: "column", overflow: "scroll", alignItems: "center", justifyContent: "flex-start", height: "700px", width: "clamp(320px, 60vw, 820px)", gap: "50px", paddingBottom: 35}}>
                         {data.map((item: any, index: any) => (
                         <div
                             key={index}

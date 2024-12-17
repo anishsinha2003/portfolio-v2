@@ -103,7 +103,7 @@ const Footer = () => {
         <GitHubIcon onClick={() => window.open("https://github.com/anishsinha2003", "_blank")} sx={{"&:hover": { transition: "0.5s", cursor: "pointer", color: isDarkMode ? "white": "black", opacity: 0.8}}}/>
         <EmailIcon onClick={handleEmailCopy} sx={{"&:hover": { transition: "0.5s", cursor: "pointer", color: isDarkMode ? "white": "black", opacity: 0.8}}}/>
         <Snackbar
-          anchorOrigin={{ vertical: 'top', horizontal: 'center' }}
+          anchorOrigin={{ vertical: 'bottom', horizontal: 'right' }}
           open={emailCopiedSnackBarOpen}
           onClose={() => setEmailCopiedSnackBarOpen(false)}
           message="Email Copied to Clipboard"

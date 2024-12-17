@@ -12,9 +12,6 @@ import Main from "@/components/Main";
 export const metadata: Metadata = {
   title: "Anish's Portfolio",
   description: "Showcasing Anish Sinha's Portfolio.",
-  icons: {
-    icon: "/favicon.ico",
-  },
 };
 
 export default function RootLayout({
@@ -24,6 +21,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
+      <link rel="icon" href="/favicon.ico" sizes="any" />
       <body
       >
         <DarkModeProvider>
