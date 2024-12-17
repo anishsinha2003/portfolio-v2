@@ -1,9 +1,31 @@
 "use client"
 import { Tooltip } from "@mui/material";
 import { useDarkMode } from "@/components/contexts/DarkModeContext";
+import { useEffect, useRef, useState } from "react";
 
 export default function VerticalLine() {
+  const [unswToolTipOpen, setUnswToolTipOpen] = useState(false)
+  const [cthsToolTipOpen, setCthsToolTipOpen] = useState(false)
   const {isDarkMode} = useDarkMode();
+
+  const cthsRef = useRef<HTMLDivElement>(null);
+  const unswRef = useRef<HTMLDivElement>(null);
+
+  const handleClickOutside = (event: MouseEvent) => {
+    if (cthsRef.current && !cthsRef.current.contains(event.target as Node)) {
+      setCthsToolTipOpen(false)
+    }
+    if (unswRef.current && !unswRef.current.contains(event.target as Node)) {
+      setUnswToolTipOpen(false)
+    }
+  };
+
+  useEffect(() => {
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, []);
 
   return (
 
@@ -164,9 +186,11 @@ export default function VerticalLine() {
               Cherrybrook <br/> Tech HS
             </div>
             <Tooltip
+              open={cthsToolTipOpen}
+              disableHoverListener
               placement="top-start"
               title={
-                <div style={{ color: "#9b9b9b", padding: 14, fontFamily: "montserrat", fontSize: 15, opacity: isDarkMode ? 0.5 : 1, textAlign: "left", letterSpacing: "0.7px" }}>
+                <div style={{ color: "#9b9b9b", padding: 14, fontFamily: "montserrat", fontSize: 15, opacity: isDarkMode ? 0.5 : 1, textAlign: "left", letterSpacing: "0.7px", lineHeight: 1.7 }}>
                   Graduated with an ATAR of&nbsp;
                   <span style={{fontWeight: "bold", color: "#c47b7b"}}>96.1</span>&nbsp;
                   with band 5 or 6 in &nbsp;
@@ -192,6 +216,7 @@ export default function VerticalLine() {
               }}
             >
               <div
+                ref={cthsRef}
                 style={{
                   // position : "absolute",
                   top: -30,
@@ -202,10 +227,14 @@ export default function VerticalLine() {
                   color: "#be4141",
                   textDecoration: "underline",
                   opacity: isDarkMode ? 0.5 : 0.8,
-                  cursor: "default"
+                  cursor: "pointer"
                 }}
+                onClick={() => setCthsToolTipOpen(!cthsToolTipOpen)}
               >
-                SHOW MORE
+                {cthsToolTipOpen
+                  ? <>HIDE</>
+                  : <>SHOW MORE</>
+                }
               </div>
             </Tooltip>
           </div>
@@ -313,8 +342,10 @@ export default function VerticalLine() {
             </div>
             <Tooltip
               placement="top-start"
+              open={unswToolTipOpen}
+              disableHoverListener
               title={
-                <div style={{ color: "#9b9b9b", padding: 14, fontFamily: "montserrat", fontSize: 15, opacity: isDarkMode ? 0.5 : 1, textAlign: "left", letterSpacing: "0.7px" }}>
+                <div style={{ color: "#9b9b9b", padding: 14, fontFamily: "montserrat", fontSize: 15, opacity: isDarkMode ? 0.5 : 1, textAlign: "left", letterSpacing: "0.7px", lineHeight: 1.7 }}>
 
                   <span style={{fontWeight: "bold", color: "#c47b7b"}}>Master of Biomedical Engineering/Bachelor of Software Engineering</span>&nbsp;
                   with a &nbsp;
@@ -337,6 +368,7 @@ export default function VerticalLine() {
               }}
             >
               <div
+                ref={unswRef}
                 style={{
                   // position : "absolute",
                   top: -30,
@@ -347,10 +379,14 @@ export default function VerticalLine() {
                   color: "#be4141",
                   textDecoration: "underline",
                   opacity: isDarkMode ? 0.5 : 0.8,
-                  cursor: "default"
+                  cursor: "pointer"
                 }}
+                onClick={() => setUnswToolTipOpen(!unswToolTipOpen)}
               >
-                SHOW MORE
+                {unswToolTipOpen
+                  ? <>HIDE</>
+                  : <>SHOW MORE</>
+                }
               </div>
             </Tooltip>
           </div>
