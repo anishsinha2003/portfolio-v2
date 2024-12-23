@@ -13,7 +13,7 @@ interface DarkModeProviderProps {
 }
 
 export const DarkModeProvider: React.FC<DarkModeProviderProps> = ({ children }) => {
-  const [isDarkMode, setIsDarkMode] = useState<boolean>(false);
+  const [isDarkMode, setIsDarkMode] = useState<boolean>(true);
 
   // Sync dark mode with localStorage and system preference
   useEffect(() => {
