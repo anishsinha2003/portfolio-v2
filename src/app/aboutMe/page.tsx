@@ -36,11 +36,11 @@ export default function AboutMe() {
   }, [page])
 
   const openCv = () => {
-    window.open("https://drive.google.com/file/d/1ztyWDlNzkD2P5qgsL8Gdh4ZmeXmbaYbK/view?usp=sharing", "_blank");
+    window.open("https://drive.google.com/file/d/1kyNk5v7pLw3a8n44DbKPYbu13JGYeGS5/view?usp=sharing", "_blank");
   };
 
   const openStatement = () => {
-    window.open("https://drive.google.com/file/d/1kr1cyEGkmlt0kGRMb4V6xP9H8df88mEF/view?usp=sharing", "_blank");
+    window.open("https://drive.google.com/file/d/1hanp8wIlAVV4edEpRU8bh5bIPujTKQEQ/view?usp=sharing", "_blank");
   };
 
   if (windowWidth === 0) {
