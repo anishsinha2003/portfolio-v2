@@ -36,7 +36,7 @@ export default function AboutMe() {
   }, [page])
 
   const openCv = () => {
-    window.open("https://drive.google.com/file/d/1y-LkVwAayjSWjFvl5qFA1S5xayw-0VqT/view?usp=sharing", "_blank");
+    window.open("https://drive.google.com/file/d/1rFazk31SnHSl5N3CGrfs4LehKCK7sMeb/view?usp=sharing", "_blank");
   };
 
   const openStatement = () => {
