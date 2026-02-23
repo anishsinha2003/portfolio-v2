@@ -76,7 +76,7 @@ export default function AboutMe() {
               Software Engineer
             </div>
             <div className={style.descMobile}  style={{color: isDarkMode ? "" : "black", opacity: isDarkMode ? "" : 0.4 }}>
-              I am a fifth-year UNSW undergraduate majoring in Software and Biomedical Engineering with years of technical experience gained through coursework and side projects. My passion lies in software development and creating user-focused products, with the greatest fulfillment coming from knowing my work positively impacts real-world users.
+              I am a final-year UNSW undergraduate majoring in Software and Biomedical Engineering with years of technical experience gained through coursework and side projects. My passion lies in software development and creating user-focused products, with the greatest fulfillment coming from knowing my work positively impacts real-world users.
             </div>
             <div className={style.buttonsMobile}>
               <div className={isDarkMode ? style.cvButtonMobile : style.cvButtonMobileLightMode} style={{width: "160px"}} onClick={openCv}>
